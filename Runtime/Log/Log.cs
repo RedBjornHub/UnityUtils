@@ -7,12 +7,17 @@
         {
             get
             {
-                if (LoggerCached == null)
-                {
-                    LoggerCached = new T();
-                    LoggerCached.SetPrefix(string.Concat("[", typeof(T).Name, "] "));
-                }
+                Init();
                 return LoggerCached;
+            }
+        }
+
+        public static void Init()
+        {
+            if (LoggerCached == null)
+            {
+                LoggerCached = new T();
+                LoggerCached.SetPrefix(string.Concat("[", typeof(T).Name, "] "));
             }
         }
 
