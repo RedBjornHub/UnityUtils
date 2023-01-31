@@ -7,17 +7,17 @@
         {
             get
             {
-                Init();
+                Init(true, true, true);
                 return LoggerCached;
             }
         }
 
-        public static void Init()
+        public static void Init(bool infoEnabled, bool warningEnabled, bool errorEnabled)
         {
             if (LoggerCached == null)
             {
                 LoggerCached = new T();
-                LoggerCached.SetPrefix(string.Concat("[", typeof(T).Name, "] "));
+                LoggerCached.Init(string.Concat("[", typeof(T).Name, "] "), infoEnabled, warningEnabled, errorEnabled);
             }
         }
 

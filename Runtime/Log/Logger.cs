@@ -6,7 +6,7 @@ namespace RedBjorn.Utils
     {
         public string Prefix;
 
-        public void SetPrefix(string prefix)
+        public void Init(string prefix, bool infoEnabled, bool warningEnabled, bool errorEnabled)
         {
             Prefix = prefix;
         }

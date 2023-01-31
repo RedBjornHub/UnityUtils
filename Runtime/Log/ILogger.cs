@@ -2,7 +2,7 @@
 {
     public interface ILogger
     {
-        void SetPrefix(string prefix);
+        void Init(string prefix, bool infoEnabled, bool warningEnabled, bool errorEnabled);
         void Info(object message);
         void Warning(object message);
         void Error(object message);
