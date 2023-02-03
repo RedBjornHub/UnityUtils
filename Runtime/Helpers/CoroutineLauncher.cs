@@ -26,20 +26,20 @@ namespace RedBjorn.Utils
 
         public static Coroutine Launch(IEnumerator ienum, Action onCompleted = null)
         {
-            return Instance.Play(ienum, onCompleted);
+            return Instance.LaunchInternal(ienum, onCompleted);
         }
 
-        public static void Finish(Coroutine coroutine)
+        public static void Abort(Coroutine coroutine)
         {
-            Instance.Stop(coroutine);
+            Instance.AbortInternal(coroutine);
         }
 
-        Coroutine Play(IEnumerator ienum, Action onCompleted = null)
+        Coroutine LaunchInternal(IEnumerator ienum, Action onCompleted = null)
         {
             return StartCoroutine(WithOnCompleted(ienum, onCompleted));
         }
 
-        void Stop(Coroutine coroutine)
+        void AbortInternal(Coroutine coroutine)
         {
             StopCoroutine(coroutine);
         }
