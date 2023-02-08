@@ -7,10 +7,10 @@ namespace RedBjorn.Utils
     /// <summary>
     /// Helper gameObject to launch coroutines from non-Monobehaviour classes
     /// </summary>
-    public class CoroutineLauncher : MonoBehaviour
+    public class CoroutineHelper : MonoBehaviour
     {
-        static CoroutineLauncher CachedInstance;
-        static CoroutineLauncher Instance
+        static CoroutineHelper CachedInstance;
+        static CoroutineHelper Instance
         {
             get
             {
@@ -18,7 +18,7 @@ namespace RedBjorn.Utils
                 {
                     var go = new GameObject("CoroutineLauncher");
                     DontDestroyOnLoad(go);
-                    CachedInstance = go.AddComponent<CoroutineLauncher>();
+                    CachedInstance = go.AddComponent<CoroutineHelper>();
                 }
                 return CachedInstance;
             }
