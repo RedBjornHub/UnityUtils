@@ -61,7 +61,7 @@ namespace RedBjorn.Utils
                     {
                         var t = typeof(Component);
                         if (!typeInherited.IsInterface
-                            && t == typeInherited || typeInherited.IsSubclassOf(t)))
+                            && t == typeInherited || typeInherited.IsSubclassOf(t))
                     {
                             if (!components.Contains(typeInherited))
                             {
