@@ -21,6 +21,7 @@ namespace RedBjorn.Utils
 
     public static class AssetDatabaseUtils
     {
+        [System.Obsolete("Soon will be removed")]
         public static T[] FindAssets<T>() where T : Object
         {
             return AssetDatabaseExtensions.FindAssets<T>();
