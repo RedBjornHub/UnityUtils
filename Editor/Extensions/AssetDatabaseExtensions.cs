@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace RedBjorn.Utils
 {
-    public static class AssetDatabaseUtils
+    public static class AssetDatabaseExtensions
     {
         public static T[] FindAssets<T>() where T : Object
         {
@@ -16,6 +16,14 @@ namespace RedBjorn.Utils
                 assets[i] = AssetDatabase.LoadAssetAtPath(path, type) as T;
             }
             return assets;
+        }
+    }
+
+    public static class AssetDatabaseUtils
+    {
+        public static T[] FindAssets<T>() where T : Object
+        {
+            return AssetDatabaseExtensions.FindAssets<T>();
         }
     }
 }
