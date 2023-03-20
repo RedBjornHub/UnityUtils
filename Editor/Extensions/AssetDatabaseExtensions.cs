@@ -1,21 +1,27 @@
-﻿using UnityEditor;
+﻿using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 namespace RedBjorn.Utils
 {
     public static class AssetDatabaseExtensions
     {
-        public static T[] FindAssets<T>() where T : Object
+        public static T[] FindAssets<T>(string filter = null) where T : Object
         {
-            var type = typeof(T);
-            var guids = AssetDatabase.FindAssets(string.Concat("t:", typeof(T).Name));
+            var typeFilter = string.IsNullOrEmpty(filter) ? $"t: {typeof(Tag).Name}" : $"t: {typeof(Tag).Name} {filter}";
+            var guids = AssetDatabase.FindAssets(typeFilter);
             var assets = new T[guids.Length];
             for (int i = 0; i < assets.Length; i++)
             {
                 var path = AssetDatabase.GUIDToAssetPath(guids[i]);
-                assets[i] = AssetDatabase.LoadAssetAtPath(path, type) as T;
+                assets[i] = AssetDatabase.LoadAssetAtPath<T>(path);
             }
             return assets;
+        }
+
+        public static T FindAsset<T>(string filter = null) where T : Object
+        {
+            return FindAssets<T>(filter).OrderBy(a => a.name).FirstOrDefault();
         }
     }
 
