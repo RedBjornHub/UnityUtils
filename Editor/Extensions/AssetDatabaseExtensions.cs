@@ -8,7 +8,8 @@ namespace RedBjorn.Utils
     {
         public static T[] FindAssets<T>(string filter = null) where T : Object
         {
-            var typeFilter = string.IsNullOrEmpty(filter) ? $"t: {typeof(Tag).Name}" : $"t: {typeof(Tag).Name} {filter}";
+            var type = typeof(T).Name;
+            var typeFilter = string.IsNullOrEmpty(filter) ? $"t: {type}" : $"t: {type} {filter}";
             var guids = AssetDatabase.FindAssets(typeFilter);
             var assets = new T[guids.Length];
             for (int i = 0; i < assets.Length; i++)
@@ -21,7 +22,7 @@ namespace RedBjorn.Utils
 
         public static T FindAsset<T>(string filter = null) where T : Object
         {
-            return FindAssets<T>(filter).OrderBy(a => a.name).FirstOrDefault();
+            return FindAssets<T>(filter).OrderBy(a => a ? a.name : string.Empty).FirstOrDefault();
         }
     }
 
