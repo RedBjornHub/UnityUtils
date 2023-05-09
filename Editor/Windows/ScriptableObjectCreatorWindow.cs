@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace RedBjorn.Utils 
+namespace RedBjorn.Utils
 {
     public class ScriptableObjectCreatorWindow : EditorWindowExtended
     {
@@ -32,7 +30,7 @@ namespace RedBjorn.Utils
             window.titleContent = new GUIContent("ScriptableObject Creator");
             window.Style = new GUIStyle(EditorStyles.miniButton);
             window.Style.alignment = TextAnchor.MiddleLeft;
-            window.BackgroundColor = EditorGUIUtility.isProSkin ? new Color (0.1f, 0.1f, 0.1f, 1f) : new Color(0.745f, 0.745f, 0.745f, 1f);
+            window.BackgroundColor = EditorGUIUtility.isProSkin ? new Color(0.1f, 0.1f, 0.1f, 1f) : new Color(0.745f, 0.745f, 0.745f, 1f);
             window.Show();
         }
 
@@ -65,7 +63,7 @@ namespace RedBjorn.Utils
             GUILayout.EndScrollView();
             GUILayout.EndArea();
 
-            Common.x = Menu.x + Menu.width +  2 * border;
+            Common.x = Menu.x + Menu.width + 2 * border;
             Common.y = 2 * border;
             Common.width = windowWidth / 3 * 2 - 3 * border;
             Common.height = windowHeight - 100;
@@ -104,7 +102,7 @@ namespace RedBjorn.Utils
                         if (!Directory.Exists(testPath))
                         {
                             testPath = Path.GetDirectoryName(testPath);
- 
+
                         }
                         if (Directory.Exists(testPath))
                         {

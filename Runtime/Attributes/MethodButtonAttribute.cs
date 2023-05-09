@@ -2,7 +2,7 @@
 
 namespace RedBjorn.Utils
 {
-    public class MethodButtonAttribute : Attribute 
+    public class MethodButtonAttribute : Attribute
     {
 
     }

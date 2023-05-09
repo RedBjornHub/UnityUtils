@@ -23,5 +23,11 @@ namespace RedBjorn.Utils
             }
             return false;
         }
+
+        public static Vector3 BezierCurve(Vector3 start, Vector3 center, Vector3 finish, float t)
+        {
+            t = Mathf.Clamp01(t);
+            return (1 - t) * (1 - t) * start + 2 * (1 - t) * t * center + t * t * finish;
+        }
     }
 }

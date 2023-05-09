@@ -10,7 +10,7 @@ namespace RedBjorn.Utils
     public class SelectorDrawer : PropertyDrawer
     {
         const string NullLabel = "None";
-        
+
         static readonly Dictionary<string, Type[]> Cache = new Dictionary<string, Type[]>();
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
@@ -93,6 +93,6 @@ namespace RedBjorn.Utils
             return caption != null && !string.IsNullOrEmpty(caption.Text)
                                     ? caption.Text
                                     : type.Name;
-        } 
+        }
     }
 }

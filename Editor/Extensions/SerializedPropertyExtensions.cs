@@ -66,17 +66,17 @@ namespace RedBjorn.Utils
                 var type = source.GetType();
                 while (type != null)
                 {
-                    var field = type.GetField(memberName, BindingFlags.NonPublic 
-                                                            | BindingFlags.Public 
+                    var field = type.GetField(memberName, BindingFlags.NonPublic
+                                                            | BindingFlags.Public
                                                             | BindingFlags.Instance);
                     if (field != null)
                     {
                         return field.GetValue(source);
                     }
 
-                    var property = type.GetProperty(memberName, BindingFlags.NonPublic 
-                                                                | BindingFlags.Public 
-                                                                | BindingFlags.Instance 
+                    var property = type.GetProperty(memberName, BindingFlags.NonPublic
+                                                                | BindingFlags.Public
+                                                                | BindingFlags.Instance
                                                                 | BindingFlags.IgnoreCase);
                     if (property != null)
                     {

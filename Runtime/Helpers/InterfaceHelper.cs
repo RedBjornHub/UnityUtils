@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RedBjorn.Utils 
+namespace RedBjorn.Utils
 {
     public static class InterfaceHelper
     {
@@ -26,20 +26,20 @@ namespace RedBjorn.Utils
                 }
 
                 var typeName = type.ToString().ToLower();
-                if (typeName.Contains("unity") 
+                if (typeName.Contains("unity")
                     || typeName.Contains("system.")
-                    || typeName.Contains("mono.") 
+                    || typeName.Contains("mono.")
                     || typeName.Contains("icsharpcode.")
-                    || typeName.Contains("nsubstitute") 
-                    || typeName.Contains("nunit.") 
+                    || typeName.Contains("nsubstitute")
+                    || typeName.Contains("nunit.")
                     || typeName.Contains("microsoft.")
-                    || typeName.Contains("boo.") 
-                    || typeName.Contains("serializ") 
+                    || typeName.Contains("boo.")
+                    || typeName.Contains("serializ")
                     || typeName.Contains("json")
-                    || typeName.Contains("log.") 
-                    || typeName.Contains("logging") 
+                    || typeName.Contains("log.")
+                    || typeName.Contains("logging")
                     || typeName.Contains("test")
-                    || typeName.Contains("editor") 
+                    || typeName.Contains("editor")
                     || typeName.Contains("debug"))
                 {
                     continue;
@@ -62,7 +62,7 @@ namespace RedBjorn.Utils
                         var t = typeof(Component);
                         if (!typeInherited.IsInterface
                             && t == typeInherited || typeInherited.IsSubclassOf(t))
-                    {
+                        {
                             if (!components.Contains(typeInherited))
                             {
                                 components.Add(typeInherited);

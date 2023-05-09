@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RedBjorn.Utils 
+namespace RedBjorn.Utils
 {
     public class SelectorAttribute : PropertyAttribute
     {
