@@ -1,4 +1,7 @@
 # Changelog
+## [1.0.4] - 2023-05-09
+Added Bezier move method
+
 ## [1.0.3] - 2023-03-31
 Added ScriptableObjectCreator window;
 
