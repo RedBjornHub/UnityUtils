@@ -1,4 +1,7 @@
 # Changelog
+## [1.0.5] - 2023-05-15
+Added Comparator class (compare through the Inspector tab)
+
 ## [1.0.4] - 2023-05-09
 Added Bezier move method
 
