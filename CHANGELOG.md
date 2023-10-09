@@ -1,4 +1,7 @@
 # Changelog
+## [1.0.6] - 2023-10-09
+Fix ScriptableObject class foldout property drawer
+
 ## [1.0.5] - 2023-05-15
 Added Comparator class (compare through the Inspector tab)
 

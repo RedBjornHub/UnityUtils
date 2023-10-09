@@ -76,9 +76,12 @@ namespace RedBjorn.Utils
 
             position.size = rectSize;
 #if UNITY_2022_2_OR_NEWER
-            var shift = 12f;
-            EditorGUIUtility.labelWidth += shift;
-            position.x -= shift;
+            if (property.serializedObject.targetObject is MonoBehaviour)
+            {
+                var shift = 12f;
+                EditorGUIUtility.labelWidth += shift;
+                position.x -= shift;
+            }
 #endif
             EditorGUI.PropertyField(position, property, GUIContent.none, includeChildren: true);
         }
