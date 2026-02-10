@@ -87,7 +87,12 @@ namespace RedBjorn.Utils
             var result = new List<T>();
             foreach (var type in types)
             {
+#if UNITY_2023_1_OR_NEWER
+                var objects = UnityEngine.Object.FindObjectsByType(type, FindObjectsSortMode.None);
+#else
                 var objects = UnityEngine.Object.FindObjectsOfType(type);
+#endif
+
                 if (objects == null || objects.Length == 0)
                 {
                     continue;
